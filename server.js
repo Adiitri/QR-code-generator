@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import qr from 'qr-image';
 
 //let switch_=0;
-const port=3000;
+const port=process.env.PORT ||3000;
 const app=express();
 app.use(express.static("public"));
 
