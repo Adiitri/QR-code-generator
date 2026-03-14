@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link to QR Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-qrcode"></i> Link to QR Converter</h1>
+            <p class="tagline">Convert any URL into a QR code instantly. Download and share with ease.</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <div class="card">
+                    <h2 class="section-title"></i> Enter Your Link</h2>
+                    <form action="/submit" method="POST">
+                    <div class="input-group">
+                        <label for="urlInput">Website URL</label>
+                        <input type="url" id="urlInput" class="url-input" name="urlInput" placeholder="htts://example.com" required>
+                    </div>
+                    
+                    
+
+                    <button id="generateBtn" class="generate-btn" type="submit">
+                        Generate QR Code
+                    </button>
+                </form>
+                    
+                    <div id="successMessage" class="success-message">
+                        QR Code generated successfully! You can now export it as PNG.
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Use</h3>
+                    <ol>
+                        <li>Enter a valid URL in the input field above (e.g., https://example.com)</li>
+                        <li>Click the "Generate QR Code" button to create your QR code</li>
+                        <li>Once generated, click "Export as PNG" to download the QR code image</li>
+                        <!-- <li>Use the QR code for marketing materials, business cards, or sharing links</li> -->
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <div class="card">
+                    <h2 class="section-title"></i>QR Code</h2>
+                    <div class="qr-container">
+                        <div id="qrCode">
+                            <!-- "data:image/png;base64," + qr_base64 -->
+                         <img src="data:image/png;base64,<%= image %>" alt="The generated QR">
+                        
+                         <%#  = image %>      
+                            <p id="textchk" class="placeholder-text"> <%=text %> </p>
+                        </div>
+                    </div>
+                    
+                    <button id="exportBtn" class="export-btn" disabled>
+                        <i class="fas fa-download"></i> Export as PNG
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Link to QR Converter | Made with <i class="fas fa-heart" style="color:#ff4d6d;"></i> for easy QR generation</p>
+        </footer>
+    </div>
+    <% if (image) { %>
+        <script>
+            history.replaceState(null, "", "/");
+        </script>
+        <% } %>
+    <script src="/main1.js"></script>
+</body>
+</html>
