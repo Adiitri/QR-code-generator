@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import bodyParser from "body-parser";
 import { dirname } from "path"; 
 import { fileURLToPath } from "url";
@@ -10,8 +11,8 @@ const app=express();
 app.use(express.static("public"));
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+app.set("views", path.join( __dirname + "../views"));
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
 
 app.use(bodyParser.urlencoded({extended:true}));
 
