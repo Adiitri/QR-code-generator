@@ -60,6 +60,8 @@ res.setHeader('Content-Disposition', 'attachment; filename="qrcode.png"');
 res.send(img);
 })
 
-app.listen(port,()=>{
-    console.log(`Server has started on port: ${port}`);
-})
+// app.listen(port,()=>{
+//     console.log(`Server has started on port: ${port}`);
+// })
+
+export default app;
