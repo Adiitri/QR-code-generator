@@ -9,7 +9,10 @@ const port=process.env.PORT ||3000;
 const app=express();
 app.use(express.static("public"));
 
-//const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.set("view engine", "ejs"); 
