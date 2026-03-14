@@ -8,7 +8,7 @@ import qr from 'qr-image';
 //let switch_=0;
 const port=process.env.PORT ||3000;
 const app=express();
-app.use(express.static("public"));
+app.use(express.static("../public"));
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.set("views", path.join( __dirname + "../views"));
