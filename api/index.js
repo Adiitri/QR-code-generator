@@ -15,7 +15,6 @@ app.set("views", __dirname + "/views");
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.set("view engine", "ejs"); 
 app.get('/',(req,res)=>{
     res.render("index",{
        image: "",
