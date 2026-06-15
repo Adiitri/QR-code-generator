@@ -105,7 +105,8 @@ label {
 }
 
 .generate-btn {
-    background: linear-gradient(to right, #3a86ff, #48cae4);
+    background:  #3a9cff;
+    
     color: white;
     border: none;
     padding: 16px 30px;
